@@ -94,6 +94,9 @@ public class FlightReservation extends FlightAdmin{
                     break;
                 case 8 :
                     System.out.println("Thank you for choosing us");
+                    System.out.println("&");
+                    System.out.println("Visit Again");
+                    System.out.println("----------");
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
