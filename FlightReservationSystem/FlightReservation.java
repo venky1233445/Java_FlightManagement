@@ -1,6 +1,7 @@
 package FlightReservationSystem;
 
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class FlightReservation extends FlightAdmin{
@@ -119,56 +120,218 @@ public class FlightReservation extends FlightAdmin{
 
 
                 case 9:
-                    System.out.println(" Add /update Details Flight info.....");
+                    System.out.println(" update Details Flight info.....");
                     int options;
                     Scanner ks = new Scanner(System.in);
-                    System.out.println("section:  1.Domestic, 2.international");
+                    System.out.println("section:  1.Domestic, 2.international, 3.AddingInfo Domestic ,4.Adding Info International");
                     options = ks.nextInt();
                     if (options==1) {
-                        System.out.println("provide Airline  NO...");
-                        String airline = ks.next();
-                        domesticFlight.setAirline(airline);
-                        System.out.println("provide new Flightno... ");
-                        String flightNo = ks.next();
-                        domesticFlight.setFlightnumber(flightNo);
-                        System.out.println("provide new From Date...");
-                        String From = ks.next();
-                        domesticFlight.setDepartureDate(From);
-                        System.out.println("Provide To date...");
-                        String to = ks.next();
-                        domesticFlight.setDesTination(to);
-                        System.out.println(" provide capacity in numbers............");
-                        int volume = ks.nextInt();
-                        domesticFlight.setCapacity(volume);
-                        System.out.println("Provide new price....");
-                        int newprice = ks.nextInt();
-                        domesticFlight.setPrice(newprice);
-                        System.out.println("Updated information......");
-                        domesticFlight.displayFlightinfo();
+                        System.out.println("welcome to Updates");
+                        System.out.println("1.Update All Information");
+                        System.out.println(" 2.update New Airline");
+                        System.out.println("3.Update FlightNo");
+                        System.out.println("4.Update Fromdate");
+                        System.out.println("5.Update to date");
+                        System.out.println("6.update Capacity");
+                        System.out.println("7.Update New Price");
+                        int choices = ks.nextInt();
+                        switch (choices) {
+                         case 1:
+                             System.out.println("provide new update  Airline  NO...");
+                            String airline = ks.next();
+                            domesticFlight.setAirline(airline);
+                            System.out.println("provide new Update Flightno... ");
+                            String flightNo = ks.next();
+                            domesticFlight.setFlightnumber(flightNo);
+                            System.out.println("provide new  Update From Date...");
+                            String From = ks.next();
+                            domesticFlight.setDepartureDate(From);
+                            System.out.println("Provide Update To date...");
+                            String to = ks.next();
+                            domesticFlight.setDesTination(to);
+                            System.out.println(" provide Update capacity in numbers............");
+                            int volume = ks.nextInt();
+                            domesticFlight.setCapacity(volume);
+                            System.out.println("Provide Update new price....");
+                            int newprice = ks.nextInt();
+                            domesticFlight.setPrice(newprice);
+                            System.out.println("New  Updated  information......");
+                            domesticFlight.displayFlightinfo();
+                            break;
+                            case 2:
+                                System.out.println("Change Airline Update");
+                                String NewAirline = ks.next();
+                                domesticFlight.setAirline(NewAirline);
+                                System.out.println("Changed Successfully");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 3:
+                                System.out.println("Change FlightNO");
+                                String Flightnumber = ks.next();
+                                domesticFlight.setFlightnumber(Flightnumber);
+                                System.out.println("Successfully Changed");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 4:
+                                System.out.println("change From date");
+                                String newFRom = ks.next();
+                                domesticFlight.setDepartureDate(newFRom);
+                                System.out.println("Successfully Changed");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 5:
+
+                                System.out.println("Change To date");
+                                String NewTo = ks.next();
+                                domesticFlight.setDesTination(NewTo);
+                                System.out.println("Successfully Changed");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 6:
+                                System.out.println("Change CAPACITY");
+                                int capa = ks.nextInt();
+                                domesticFlight.setCapacity(capa);
+                                System.out.println("Successfully Changed");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 7 :
+                                System.out.println("Change Price");
+                                double pricei = ks.nextDouble();
+                                domesticFlight.setPrice(pricei);
+                                System.out.println("Successfully Changed");
+                                domesticFlight.displayFlightinfo();
+                                break;
+                            case 8:
+                                System.out.println("Exit");
+                                return;
+                            default:
+                                System.out.println("Invalid options please try again");
+                        }
                     }
                     if (options == 2) {
                         Scanner kd = new Scanner(System.in);
+                        System.out.println("welcome to Updates");
+                        System.out.println("1.Update All Information");
+                        System.out.println(" 2.update New Airline");
+                        System.out.println("3.Update FlightNo");
+                        System.out.println("4.Update Fromdate");
+                        System.out.println("5.Update to date");
+                        System.out.println("6.update Capacity");
+                        System.out.println("7.Update New Price");
+                        int coach = kd.nextInt();
+                       switch (coach){
+                           case 1:
+                               System.out.println("provide All data Information...");
+                               System.out.println("provide Airline  NO...");
+                               String airline = kd.next();
+                               internationalflight.setAirline(airline);
+                               System.out.println("provide new Flightno... ");
+                               String flightNo = kd.next();
+                               internationalflight.setFlightnumber(flightNo);
+                               System.out.println("provide new From Date...");
+                               String From = kd.next();
+                               internationalflight.setDepartureDate(From);
+                               System.out.println("Provide To date...");
+                               String to = kd.next();
+                               internationalflight.setDesTination(to);
+                               System.out.println(" provide capacity in numbers............");
+                               int volume = kd.nextInt();
+                               internationalflight.setCapacity(volume);
+                               System.out.println("Provide new price....");
+                               int newprice = kd.nextInt();
+                               internationalflight.setPrice(newprice);
+                               System.out.println("Updated information......");
+                               internationalflight.displayFlightinfo();
+                               break;
+                           case 2:
+                               System.out.println("Change Airline Update");
+                               String NewAirliness = kd.next();
+                               internationalflight.setAirline(NewAirliness);
+                               System.out.println("Changed Successfully");
+                               internationalflight.displayFlightinfo();
+                               break;
+                           case 3:
+                               System.out.println("Change FlightNO");
+                               String Flightnumbers = kd.next();
+                               internationalflight.setFlightnumber(Flightnumbers);
+                               System.out.println("Successfully Changed");
+                              internationalflight.displayFlightinfo();
+                               break;
+                           case 4:
+                               System.out.println("change From date");
+                               String newFRoms = kd.next();
+                              internationalflight.setDepartureDate(newFRoms);
+                               System.out.println("Successfully Changed");
+                               internationalflight.displayFlightinfo();
+                               break;
+                           case 5:
 
-                        System.out.println("provide Airline  NO...");
-                        String airline = kd.next();
-                        internationalflight.setAirline(airline);
-                        System.out.println("provide new Flightno... ");
-                        String flightNo = kd.next();
-                        internationalflight.setFlightnumber(flightNo);
-                        System.out.println("provide new From Date...");
-                        String From = kd.next();
-                        internationalflight.setDepartureDate(From);
-                        System.out.println("Provide To date...");
-                        String to = kd.next();
-                        internationalflight.setDesTination(to);
-                        System.out.println(" provide capacity in numbers............");
-                        int volume = kd.nextInt();
-                        internationalflight.setCapacity(volume);
-                        System.out.println("Provide new price....");
-                        int newprice = kd.nextInt();
-                        internationalflight.setPrice(newprice);
-                        System.out.println("Updated information......");
-                        internationalflight.displayFlightinfo();
+                               System.out.println("Change To date");
+                               String NewTos = kd.next();
+                               internationalflight.setDesTination(NewTos);
+                               System.out.println("Successfully Changed");
+                            internationalflight.displayFlightinfo();
+                               break;
+                           case 6:
+                               System.out.println("Change CAPACITY");
+                               int capact = kd.nextInt();
+                               internationalflight.setCapacity(capact);
+                               System.out.println("Successfully Changed");
+                               internationalflight.displayFlightinfo();
+                               break;
+                           case 7 :
+                               System.out.println("Change Price");
+                               double pricein = kd.nextDouble();
+                               internationalflight.setPrice(pricein);
+                               System.out.println("Successfully Changed");
+                               internationalflight.displayFlightinfo();
+                               break;
+                           case 8:
+                               System.out.println("Exit");
+                               return;
+                           default:
+                               System.out.println("Invalid options please try again");
+
+                       }
+
+
+                    }
+                    if (options == 3){
+                        Scanner sk = new Scanner(System.in);
+
+                        System.out.println("Provide Flight no.....");
+                        String No = sk.next();
+                        System.out.println("Provide From date information..");
+                        String fromdate=sk.next();
+                        System.out.println("provide toDate ....");
+                        String Todate = sk.next();
+                        System.out.println("provide seats....");
+                        int seats = sk.nextInt();
+                        System.out.println("provide new price....");
+                        double price = sk.nextDouble();
+                        domesticFlight.update(No,fromdate,Todate,seats,price);
+                        System.out.println("adding new one successsfully");
+                        System.out.println("information updated....");
+                        domesticFlight.displayFlightinfo();
+                       break;
+                    }
+                    if (options==4){
+                        Scanner sdc = new Scanner(System.in);
+
+                        System.out.println("Provide Flight no.....");
+                        String No = sdc.next();
+                        System.out.println("Provide From date information..");
+                        String fromdate=sdc.next();
+                        System.out.println("provide toDate ....");
+                        String Todate = sdc.next();
+                        System.out.println("provide seats....");
+                        int seats = sdc.nextInt();
+                        System.out.println("provide new price....");
+                        double price = sdc.nextDouble();
+                        internationalflight.update(No,fromdate,Todate,seats,price);
+                        System.out.println("adding new one successsfully");
+                        System.out.println("information updated");
+                      internationalflight.displayFlightinfo();
                     }
                     else {
                         System.out.println("Invalid option");
