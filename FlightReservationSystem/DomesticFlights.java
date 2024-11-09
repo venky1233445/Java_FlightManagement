@@ -8,9 +8,11 @@ public class DomesticFlights extends Flight{
         super(Flightnumber, departureDate, desTination, Airline, capacity, price);
     }
 
+
+
     @Override
     void bookTicket() {
-        int tickets;
+        int tickets ;
         System.out.println("Welcome to booking of Tickets");
         Scanner sc = new Scanner(System.in);
        int count =0;
